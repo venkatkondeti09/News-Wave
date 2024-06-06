@@ -1,31 +1,49 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-const Navbar =()=>{
-    return (
-      <div id="navbar">
-        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div className="container-fluid">
-    <Link className="navbar-brand" to="/" style={{color:'red'}}>NewsWorld</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <href className="nav-link active" aria-current="page" to="/" style={{color:'blue'}}>Home</href>
-        </li>
-        <li className='nav-item'><Link className='nav-link' to='/business'>Business</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/entartainment'>Entartainment</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/general'>General</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/health'>Health</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/science'>Science</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/sports'>Sports</Link></li>
-        <li className='nav-item'><Link className='nav-link' to='/technology'>Technology</Link></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-      </div>
-    )
-}
-export default Navbar
+import React from 'react';
+import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import BusinessIcon from '@mui/icons-material/Business';
+import EntertainmentIcon from '@mui/icons-material/Movie';
+import GeneralIcon from '@mui/icons-material/Public';
+import HealthIcon from '@mui/icons-material/LocalHospital';
+import SportsIcon from '@mui/icons-material/Sports';
+import TechnologyIcon from '@mui/icons-material/Memory';
+import ScienceIcon from '@mui/icons-material/Science';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  return (
+    <AppBar position='static'>
+      <Toolbar>
+        <Typography variant='h6' style={{ flexGrow: 1 }}>
+          News App
+        </Typography>
+        <IconButton color='inherit' component={Link} to='/'>
+          <HomeIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/business'>
+          <BusinessIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/entertainment'>
+          <EntertainmentIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/general'>
+          <GeneralIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/health'>
+          <HealthIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/sports'>
+          <SportsIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/technology'>
+          <TechnologyIcon />
+        </IconButton>
+        <IconButton color='inherit' component={Link} to='/science'>
+          <ScienceIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Navbar;
